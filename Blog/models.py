@@ -14,5 +14,10 @@ class BlogPost(models.Model):
         return self.blog_title
 
 
+class BlogPostComment(models.Model):
+    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE,blank=True, null=True)
+    comment = models.CharField(max_length=20, blank=True)
 
-
+    
+    def __str__(self):
+        return self.comment
