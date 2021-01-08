@@ -25,4 +25,4 @@ def signup(request):
     
     context = {}
     context['form'] = form
-    return render(request, 'login.html', context)
+    return render(request, 'signup.html', context)
