@@ -11,6 +11,29 @@
       crossorigin="anonymous"
     />
   </head>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/blog">Teckieium</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        {%if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/signup">Signup</a>
+        </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/logout">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container d-flex justify-content-center">
