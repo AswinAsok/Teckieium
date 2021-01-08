@@ -12,21 +12,20 @@
     />
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid ">
+    <div class="jumbotron jumbotron-fluid">
       <div class="container d-flex justify-content-center">
         <h1 class="display-4">Latest Blogs</h1>
       </div>
     </div>
     {%for Blog in Blogs%}
     <div class="container-fluid">
-      <div class="card text-center m-3">
-        <div class="card-header">{{Blog.blog_title}}</div>
+      <div class="card text-center m-5">
+        <div class="card-header">{{Blog.blog_author}}</div>
         <div class="card-body">
-          <h5 class="card-title">{{Blog.blog_author}}</h5>
-          <p class="card-text">{{blog_content}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">{{Blog.blog_title}}</h5>
+          <a href="#" class="btn btn-primary">View Full Blog</a>
         </div>
-        <div class="card-footer text-muted">{{blog_date}}</div>
+        <div class="card-footer">{{Blog.blog_date}}</div>
       </div>
     </div>
     {% endfor %}
