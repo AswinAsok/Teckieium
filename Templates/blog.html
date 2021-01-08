@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blogs</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,35 +11,66 @@
       crossorigin="anonymous"
     />
   </head>
+  <!---------------------------Navbar Starts----------------------->
   <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="/blog">Teckieium</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand ml-2" href="/blog"><h2>Teckieium</h2></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-end"
+      id="navbarNavDropdown"
+    >
       <ul class="navbar-nav">
         {%if not user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="/accounts/login">Login</a>
+          <a class="nav-link" href="/accounts/login"
+            ><button class="btn bg-success btn-outline-info" type="submit">
+              Signin
+            </button></a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/accounts/signup">Signup</a>
+          <a class="nav-link" href="/accounts/signup"
+            ><button class="btn bg-success btn-outline-info" type="submit">
+              Signup
+            </button></a
+          >
         </li>
-        {% endif %}
-        {% if user.is_authenticated %}
+        {% endif %} {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="/accounts/logout">Logout</a>
+          <a class="nav-link" href="/accounts/logout"
+            ><button class="btn bg-success btn-outline-info" type="submit">
+              Logout
+            </button></a
+          >
         </li>
         {% endif %}
       </ul>
     </div>
   </nav>
+  <!---------------------------Navbar End----------------------->
+
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container d-flex justify-content-center">
         <h1 class="display-4">Latest Blogs</h1>
       </div>
+      <div class="d-flex justify-content-center">
+        {%if user.is_authenticated %}
+        <p class="lead">Welcome to Teckieium, {{user.username}}</p>
+        {%endif%}
+      </div>
     </div>
+    <hr>
     {%for Blog in Blogs%}
     <div class="container-fluid">
       <div class="card text-center m-5">
@@ -52,5 +83,12 @@
       </div>
     </div>
     {% endfor %}
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
