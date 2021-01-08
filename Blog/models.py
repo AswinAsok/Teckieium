@@ -12,6 +12,9 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.blog_title
+    
+    class Meta:
+        ordering = ('blog_date',)
 
 
 class BlogPostComment(models.Model):
@@ -20,3 +23,5 @@ class BlogPostComment(models.Model):
 
     def __str__(self):
         return self.comment
+
+   
