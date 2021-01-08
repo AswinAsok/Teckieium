@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
@@ -11,3 +12,17 @@ def blog(request):
     context = {}
     context['Blogs'] = Blogs
     return render(request, 'blog.html', context)
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog')
+    else:
+        form = UserCreationForm()
+    
+    context = {}
+    context['form'] = form
+    return render(request, 'login.html', context)
