@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>This is the Home Page</h1>
-    <ol>
-        {%for Blog in Blogs%}
-        <li>{{Blog.blog_title}} => {{Blog.blog_author}}</li>
-        {% endfor %}
-    </ol>
-</body>
-</html> 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid ">
+      <div class="container d-flex justify-content-center">
+        <h1 class="display-4">Latest Blogs</h1>
+      </div>
+    </div>
+    {%for Blog in Blogs%}
+    <div class="container-fluid">
+      <div class="card text-center m-3">
+        <div class="card-header">{{Blog.blog_title}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{Blog.blog_author}}</h5>
+          <p class="card-text">{{blog_content}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">{{blog_date}}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
