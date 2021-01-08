@@ -21,6 +21,7 @@ from Blog.views import blog,signup
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/',blog,name='blog'),
+    path('',blog,name='blog'),
     path('accounts/signup/',signup, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
