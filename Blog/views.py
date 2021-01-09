@@ -38,12 +38,12 @@ def bloggers(request):
 
 def createcomment(request,blog_id):
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        form = CommentForm(blog_id,request.POST)
         if form.is_valid():
             form.save()
             return redirect('blog')
     else:
-        form = CommentForm()
+        form = CommentForm(blog_id)
 
     context = {}
     context['form'] = form
