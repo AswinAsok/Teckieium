@@ -4,17 +4,25 @@
     <div class="card-header">{{Blog.blog_title}}</div>
     <div class="card-body">
       <h5 class="card-title">By, {{Blog.blog_author}}</h5>
-      <p class="card-text">
-        {{Blog.blog_content}}
-      </p>
+      <p class="card-text">{{Blog.blog_content}}</p>
     </div>
     <div class="card-footer text-muted">{{Blog.blog_date}}</div>
-    {% for comment in Comments %}
-    <div class="card-footer text-muted">{{comment}}</div>
-    {% endfor %}
   </div>
 
-
-  
-  {% endblock %}
+  <div class="card mt-3">
+    <div class="card-header"><h5>Comments</h5></div>
+    <div class="card-body">
+      <ol>
+        {% for comment in Comments %}
+        <li>
+          <p class="mt-1">{{comment}}</p>
+        </li>
+        {% endfor %}
+      </ol>
+      <button type="button" class="btn btn-primary btn-sm">
+        Post a comment
+      </button>
+    </div>
+  </div>
 </div>
+{% endblock %}
