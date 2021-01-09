@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .forms import CommentForm
 
 
 # Create your views here.
@@ -36,7 +37,16 @@ def bloggers(request):
     return render(request, "bloggers.html", context)
 
 def createcomment(request,blog_id):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog')
+    else:
+        form = CommentForm()
+
     context = {}
+    context['form'] = form
     return render(request,"createcomment.html",context)
 
 def signup(request):

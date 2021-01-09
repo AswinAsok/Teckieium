@@ -1,3 +1,17 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Create comments here</h1>
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content%}
+<div class="container ">
+  <div class="jumbotron jumbotron-fluid ">
+    <h1 class="display-4 d-flex justify-content-center">Create Comment</h1>
+  </div>
+  <hr>
+<div class="row d-flex justify-content-center">
+    <div class="col-6 m-3 card">
+  <form action="" method="POST">
+    {% csrf_token %} {{ form|crispy }}
+    <button class="btn mt-3 btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
 {% endblock %}
