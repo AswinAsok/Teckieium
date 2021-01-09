@@ -47,6 +47,7 @@ def createcomment(request,blog_id):
 
     context = {}
     context['form'] = form
+    context['blog_id'] = blog_id
     return render(request,"createcomment.html",context)
 
 def signup(request):
