@@ -27,6 +27,12 @@ def authordetails(request, author_id):
     context['Author'] = Author
     return render(request, "authordetails.html", context)
 
+def bloggers(request):
+    Bloggers = User.objects.all()
+    context = {}
+    context['Bloggers'] = Bloggers
+    return render(request, "bloggers.html", context)
+
 
 def signup(request):
     if request.method == 'POST':
