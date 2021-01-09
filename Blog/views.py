@@ -13,6 +13,12 @@ def blog(request):
     context['Blogs'] = Blogs
     return render(request, 'blog.html', context)
 
+def blogdetails(request,blog_id):
+    Blog = BlogPost.objects.get(id=blog_id)
+    context = {}
+    context['Blog'] = Blog
+    return render(request, 'blogdetails.html', context)
+
 
 def signup(request):
     if request.method == 'POST':
