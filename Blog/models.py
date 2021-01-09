@@ -13,7 +13,7 @@ class BlogPost(models.Model):
         return self.blog_title
     
     class Meta:
-        ordering = ('blog_date',)
+        ordering = ('-blog_date')
 
 
 class BlogPostComment(models.Model):
