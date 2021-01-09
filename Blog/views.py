@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -18,6 +20,12 @@ def blogdetails(request,blog_id):
     context = {}
     context['Blog'] = Blog
     return render(request, 'blogdetails.html', context)
+
+def authordetails(request, author_id):
+    Author = User.objects.get(id=author_id)
+    context = {}
+    context['Author'] = Author
+    return render(request, "authordetails.html", context)
 
 
 def signup(request):
