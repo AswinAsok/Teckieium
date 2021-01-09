@@ -17,8 +17,10 @@ def blog(request):
 
 def blogdetails(request,blog_id):
     Blog = BlogPost.objects.get(id=blog_id)
+    comments = BlogPostComment.objects.filter(blog=BlogPost.objects.get(id=blog_id))
     context = {}
     context['Blog'] = Blog
+    context['Comments'] = comments
     return render(request, 'blogdetails.html', context)
 
 def authordetails(request, author_id):

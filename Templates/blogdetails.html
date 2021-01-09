@@ -9,6 +9,12 @@
       </p>
     </div>
     <div class="card-footer text-muted">{{Blog.blog_date}}</div>
+    {% for comment in Comments %}
+    <div class="card-footer text-muted">{{comment}}</div>
+    {% endfor %}
   </div>
+
+
+  
   {% endblock %}
 </div>
