@@ -35,6 +35,9 @@ def bloggers(request):
     context['Bloggers'] = Bloggers
     return render(request, "bloggers.html", context)
 
+def createcomment(request,blog_id):
+    context = {}
+    return render(request,"createcomment.html",context)
 
 def signup(request):
     if request.method == 'POST':
