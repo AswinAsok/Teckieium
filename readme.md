@@ -1,11 +1,13 @@
 <div align="center">
 
-<img height=20% width=20% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Teckieium%20.png">
-----
+<img width =35% height=35% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Logo.png">
 
 </div>
 
-## <ins>Urls
+
+## More Details About the Project 👇
+
+## Urls 🔗
 ```
 * path('admin/', admin.site.urls)
 
@@ -29,7 +31,7 @@
 ```
 -----
 
-## <ins>Pages
+## Pages 📄
 
 #### <ins>Home Page
 ```
