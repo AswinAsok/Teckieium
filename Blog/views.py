@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .forms import CommentForm
+from .forms import CommentForm,BioForm
 
 
 # Create your views here.
@@ -55,10 +55,24 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blog')
+            return redirect('bio')
     else:
         form = UserCreationForm()
     
     context = {}
     context['form'] = form
     return render(request, 'signup.html', context)
+
+def bio(request):
+
+    if request.method == 'POST':
+        form = BioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog')
+    else:
+        form = BioForm()
+
+    context = {}
+    context['form'] = form
+    return render(request,'bio.html', context)

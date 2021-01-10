@@ -13,7 +13,7 @@ class BlogPost(models.Model):
         return self.blog_title
     
     class Meta:
-        ordering = ('-blog_date')
+        ordering = ('-blog_date',)
 
 
 class BlogPostComment(models.Model):
@@ -24,5 +24,14 @@ class BlogPostComment(models.Model):
 
     def __str__(self):
         return self.comment
+
+
+class Bio(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    bio = models.TextField(max_length= 250, default="")
+
+    
+
+    
 
    
