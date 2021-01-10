@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .models import Bio,BlogPost
 from .forms import CommentForm,BioForm
 from django.contrib.auth import authenticate, login
+from django.core.paginator import Paginator,EmptyPage
 
 
 # Create your views here.
@@ -14,8 +15,17 @@ from.models import BlogPost, BlogPostComment
 
 def blog(request):
     Blogs = BlogPost.objects.all()
+    p = Paginator(Blogs, 5)
+
+    page_num = request.GET.get('page', 1)
+
+    try:
+        page = p.page(page_num)
+    except EmptyPage:
+        page = p.page(1)
+    
     context = {}
-    context['Blogs'] = Blogs
+    context['Blogs'] = page
     return render(request, 'blog.html', context)
 
 def blogdetails(request,blog_id):

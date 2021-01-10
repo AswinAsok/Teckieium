@@ -23,5 +23,18 @@
     <div class="card-footer">{{Blog.blog_date}}</div>
   </div>
 </div>
+
 {% endfor %}
+
+<div class="container-fluid d-flex justify-content-center mb-3">
+{%if Blogs.has_previous%}
+
+<a href="?page={{ Blogs.previous_page_number }}"><button type="button" class="btn btn-primary">Previous Page</button></a>
+{% endif %}
+
+{% if Blogs.has_next%}
+<a href="?page={{ Blogs.next_page_number }}"><button type="button" class="btn btn-primary">Next Page</button></a>
+{% endif %}
+</div>
+
 {% endblock %}
