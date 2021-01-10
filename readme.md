@@ -1,6 +1,6 @@
 <div align="center">
 
-<img height=20% width=20% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Logo.png">
+<img width =80% height=80% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Logo.png">
 
 </div>
 
