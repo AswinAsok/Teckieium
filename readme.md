@@ -38,7 +38,7 @@ path('blog/',blog,name='blog')
 path('',blog,name='blog')
 ```
 
-[Home Page](https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Home%20page.png)
+<img src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Home%20page.png">
 
 #### <ins>Authorization Pages
 
