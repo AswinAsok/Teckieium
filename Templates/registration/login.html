@@ -6,7 +6,7 @@
   </div>
   <hr>
 <div class="row d-flex justify-content-center">
-    <div class="col-6 m-3 card">
+    <div class="col-6 m-3 card shadow-lg p-3 mb-5 bg-white rounded border border-primary">
   <form action="" method="POST">
     {% csrf_token %} {{ form|crispy }}
     <button class="btn mt-3 btn-primary" type="submit">Submit</button>

@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container-fluid card">
-  <div class="card text-center mt-5">
-    <div class="card-header">{{Blog.blog_title}}</div>
+  <div class="card text-center mt-5 shadow-lg p-3 mb-5 bg-white rounded border border-primary">
+    <div class="card-header">{{Blog.blog_author}}</div>
     <div class="card-body">
-      <h5 class="card-title">By, {{Blog.blog_author}}</h5>
+      <h5 class="card-title">By, {{Blog.blog_title}}</h5>
       <p class="card-text">{{Blog.blog_content}}</p>
     </div>
     <div class="card-footer text-muted">{{Blog.blog_date}}</div>
   </div>
 
-  <div class="card mt-3">
+  <div class="card mt-3 shadow-lg p-3 mb-5 bg-white rounded border border-primary">
     <div class="card-header"><h5>Comments</h5></div>
     <div class="card-body">
       <ol>
