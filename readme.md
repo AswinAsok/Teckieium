@@ -39,7 +39,7 @@ path('',blog,name='blog')
 ```
 
 <div align="center">
-<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Home%20page.png">
+<img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Home%20page.png">
 </div>
 
 #### <ins>Authorization Pages
@@ -54,9 +54,9 @@ path('accounts/', include('django.contrib.auth.urls'))
 ```
 
 <div align="center">
-<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Signup%20page.png">
-<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Enter%20Bio.png">
-<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Login.png">
+<img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Signup%20page.png">
+<img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Enter%20Bio.png">
+<img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Login.png">
 </div>
 
 
@@ -72,8 +72,8 @@ path('blog/<blog_id>/', blogdetails, name='blogdetails')
 path('blog/blogger/<author_id>', authordetails, name='authordetails')
 ```
 <div align="center">
-<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Bloggers.png">
-<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/comment%20creation.png">
-<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Blog%20details%20page.png">
-<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/login%20alert%20for%20commenting.png">
+<img width=80% height=80% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Bloggers.png">
+<img width=80% height=80% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/comment%20creation.png">
+<img width=80% height=80% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Blog%20details%20page.png">
+<img width=80% height=80% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/login%20alert%20for%20commenting.png">
 </div>
