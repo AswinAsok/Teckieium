@@ -3,11 +3,12 @@
 <img height=20% width=20% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Logo.png">
 
 </div>
-----
 
-# More Details About the Project👇
 
-## <ins>Urls🔗
+# More Details About the Project 👇
+<hr>
+
+## Urls 🔗
 ```
 * path('admin/', admin.site.urls)
 
@@ -31,7 +32,7 @@
 ```
 -----
 
-## <ins>Pages📄
+## Pages 📄
 
 #### <ins>Home Page
 ```
@@ -44,7 +45,7 @@ path('',blog,name='blog')
 <img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Home%20page.png">
 </div>
 
-#### <ins>Authorization Pages🔐
+#### <ins>Authorization Pages
 
 ```
 path('accounts/signup/',signup, name='signup')
@@ -63,7 +64,7 @@ path('accounts/', include('django.contrib.auth.urls'))
 </div>
 
 
-#### <ins>Blog Related Page🚀
+#### <ins>Blog Related Page
 
 ```
 path('blog/bloggers/', bloggers, name='bloggers')
