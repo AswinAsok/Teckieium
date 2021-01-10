@@ -27,7 +27,7 @@ class BlogPostComment(models.Model):
 
 
 class Bio(models.Model):
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete = models.CASCADE,blank=False,unique=True,default="")
     bio = models.TextField(max_length= 250, default="")
 
 
