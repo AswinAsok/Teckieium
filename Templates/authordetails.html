@@ -2,20 +2,16 @@
 <div class="container d-flex justify-content-center mt-5">
 <div class="card" style="width: 25rem">
   <div class="card-body">
-    <h5 class="card-title d-flex justify-content-center">{{Author.username}}</h5>
+    <h5 class="card-title d-flex justify-content-center">Name: {{Author.username}}</h5>
     <p class="card-text d-flex justify-content-center">
-      {{Bio.bio}}
+      Bio: {{Bio.bio}}
     </p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+  <ol class="list-group list-group-flush">
+    {% for Blog in Blogs %}
+    <li class="list-group-item">Blog: <a href="/blog/{{Blog.id}}">{{Blog.blog_title}}</a><br>Posted On: {{Blog.blog_date}}</li>
+    {% endfor %}
+  </ol>
 </div>
 </div>
 

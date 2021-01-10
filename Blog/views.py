@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Bio
+from .models import Bio,BlogPost
 from .forms import CommentForm,BioForm
 from django.contrib.auth import authenticate, login
 
@@ -29,9 +29,11 @@ def blogdetails(request,blog_id):
 def authordetails(request, author_id):
     Author = User.objects.get(id=author_id)
     bio = Bio.objects.get(user = Author)
+    blogs = BlogPost.objects.filter(blog_author = Author)
     context = {}
     context['Author'] = Author
     context['Bio'] = bio
+    context['Blogs'] = blogs
     return render(request, "authordetails.html", context)
 
 def bloggers(request):
