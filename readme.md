@@ -5,8 +5,7 @@
 </div>
 
 
-# More Details About the Project 👇
-<hr>
+## More Details About the Project 👇
 
 ## Urls 🔗
 ```
