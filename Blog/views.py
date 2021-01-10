@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .forms import CommentForm,BioForm
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -55,6 +56,10 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
             return redirect('bio')
     else:
         form = UserCreationForm()
