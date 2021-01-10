@@ -53,9 +53,11 @@ path('accounts/', include('django.contrib.auth.urls'))
 
 ```
 
-<img src = "">
-<img src = "">
-<img src = "">
+<div align="center">
+<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Signup%20page.png">
+<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Enter%20Bio.png">
+<img width=50% height=50% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Login.png">
+</div>
 
 
 #### <ins>Blog Related Page
@@ -69,7 +71,9 @@ path('blog/<blog_id>/', blogdetails, name='blogdetails')
 
 path('blog/blogger/<author_id>', authordetails, name='authordetails')
 ```
-
-<img src = "">
-<img src = "">
-<img src = "">
+<div align="center">
+<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Bloggers.png">
+<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/comment%20creation.png">
+<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Blog%20details%20page.png">
+<img width=50% height=50% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/login%20alert%20for%20commenting.png">
+</div>
