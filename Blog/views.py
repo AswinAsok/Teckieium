@@ -71,12 +71,12 @@ def signup(request):
 def bio(request):
 
     if request.method == 'POST':
-        form = BioForm(request.POST)
+        form = BioForm(request.user.username,request.POST,)
         if form.is_valid():
             form.save()
             return redirect('blog')
     else:
-        form = BioForm()
+        form = BioForm(request.user.username)
 
     context = {}
     context['form'] = form

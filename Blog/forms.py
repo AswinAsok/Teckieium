@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import BlogPost,BlogPostComment,Bio
+from django.contrib.auth.models import User
 
 
 class CommentForm(ModelForm):
@@ -16,3 +17,7 @@ class BioForm(ModelForm):
     class Meta:
         model = Bio
         fields = ('user', 'bio')
+
+    def __init__(self, user, *args, **kwargs):
+        super(BioForm, self).__init__(*args, **kwargs)
+        self.fields['user'].queryset = User.objects.filter(username=user)

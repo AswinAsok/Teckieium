@@ -17,7 +17,7 @@ class BlogPost(models.Model):
 
 
 class BlogPostComment(models.Model):
-    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE,default="")
+    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     comment = models.CharField(max_length=20, blank=True)
     comment_date = models.DateField(blank=True, null=True) 
     comment_time = models.TimeField(blank=True, null=True)
@@ -30,7 +30,7 @@ class Bio(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     bio = models.TextField(max_length= 250, default="")
 
-    
+
 
     
 
