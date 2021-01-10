@@ -56,6 +56,7 @@ path('accounts/', include('django.contrib.auth.urls'))
 <div align="center">
 <img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Signup%20page.png">
 <img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Enter%20Bio.png">
+<img width=60% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Author%20details.png">
 <img width=80% height=80% src="https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Login.png">
 </div>
 
