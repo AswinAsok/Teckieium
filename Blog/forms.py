@@ -21,3 +21,14 @@ class BioForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(BioForm, self).__init__(*args, **kwargs)
         self.fields['user'].queryset = User.objects.filter(username=user)
+
+class CreateBlog(ModelForm):
+
+    class Meta:
+        model = BlogPost
+        fields = ('blog_title' ,'blog_author' ,'blog_content')
+
+    def __init__(self, user, *args, **kwargs):
+        super(CreateBlog, self).__init__(*args, **kwargs)
+        self.fields['blog_author'].queryset = User.objects.filter(username=user)
+        

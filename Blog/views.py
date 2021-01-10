@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Bio,BlogPost
-from .forms import CommentForm,BioForm
+from .forms import CommentForm,BioForm,CreateBlog
 from django.contrib.auth import authenticate, login
 from django.core.paginator import Paginator,EmptyPage
 
@@ -96,3 +96,18 @@ def bio(request):
     context = {}
     context['form'] = form
     return render(request,'bio.html', context)
+
+def createblog(request):
+
+    if request.method == 'POST':
+        form = CreateBlog(request.user.username,request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog')
+    else:
+        form = CreateBlog(request.user.username)
+    
+    context = {}
+    context['form'] = form
+    return render(request,'createblog.html', context)
+        
