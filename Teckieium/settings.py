@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*=*k1688_wn+s!ycfj7gzt!pw73t=5_3a06*u=p!@$ak(v$!#$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['teckieium.herokuapp.com', '127.0.0.1']
 
