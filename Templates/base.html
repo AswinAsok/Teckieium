@@ -47,6 +47,13 @@
         </li>
         {% endif %} {% if user.is_authenticated %}
         <li class="nav-item">
+          <a class="nav-link" href="/profile"
+            ><button class="btn bg-success btn-outline-info" type="submit">
+              Profile
+            </button></a
+          >
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/accounts/logout"
             ><button class="btn bg-success btn-outline-info" type="submit">
               Logout

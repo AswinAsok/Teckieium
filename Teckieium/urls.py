@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from Blog.views import blog,signup,blogdetails,authordetails,bloggers,createcomment,bio,createblog
+from Blog.views import blog,signup,blogdetails,authordetails,bloggers,createcomment,bio,createblog,profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +24,7 @@ urlpatterns = [
     path('',blog,name='blog'),
     path('accounts/signup/',signup, name='signup'),
     path('accounts/signup/bio',bio, name='bio'),
+    path('profile/',profile, name='profile'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('blog/bloggers/', bloggers, name='bloggers'),
     path('blog/create/', createblog, name='createblog'),

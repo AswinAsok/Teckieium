@@ -17,11 +17,13 @@
 
   <tbody>
     {% for Blogger in Bloggers%}
+    {% if not Blogger.is_superuser%}
     <tr>
       <th scope="row">{{Blogger.id}}</th>
       <td>{{Blogger.username}}</td>
       <td> <a href="/blog/blogger/{{Blogger.id}}">Click Here</a></td>
     </tr>
+    {% endif %}
     {% endfor%}
   </tbody>
 </table>

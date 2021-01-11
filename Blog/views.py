@@ -46,6 +46,17 @@ def authordetails(request, author_id):
     context['Blogs'] = blogs
     return render(request, "authordetails.html", context)
 
+def profile(request):
+    user = User.objects.get(id = request.user.id)
+    bio = Bio.objects.get(user = user)
+    blogs = BlogPost.objects.filter(blog_author = user)
+    context = {}
+    context['User'] = user
+    context['Bio'] = bio
+    context['Blogs'] = blogs
+    return render(request, "profile.html", context)
+
+
 def bloggers(request):
     Bloggers = User.objects.all()
     context = {}
