@@ -1,7 +1,7 @@
 <div align="center">
 
 <img width =35% height=35% src = "https://github.com/AswinAsok/Teckieium/blob/master/Teckieium%20Images/Logo.png">
-<a href = "https://teckieium.herokuapp.com"><h3>Live Demo</h3></a>
+<h2><a href = "https://teckieium.herokuapp.com">Live Demo</a></h2>
 
 </div>
 
