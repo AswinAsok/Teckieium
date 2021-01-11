@@ -56,6 +56,10 @@ def profile(request):
     context['Blogs'] = blogs
     return render(request, "profile.html", context)
 
+def deleteblog(request, blog_id):
+    Blog = BlogPost.objects.get(id=blog_id).delete()
+    return redirect('profile')
+
 
 def bloggers(request):
     Bloggers = User.objects.all()

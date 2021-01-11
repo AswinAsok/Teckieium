@@ -2,17 +2,31 @@
 <div class="container d-flex justify-content-center mt-5">
   
 <div class="card bg-primary  " style="width: 25rem">
+
   <div class="card-body text-white ">
     <h5 class="card-title d-flex justify-content-center ">Name: {{User.username}}</h5>
     <p class="card-text text-center">
       Bio: {{Bio.bio}}
     </p>
   </div>
+
   <ol class="list-group list-group-flush">
     {% for Blog in Blogs %}
-    <li class="list-group-item">Blog: <a href="/blog/{{Blog.id}}">{{Blog.blog_title}}</a><br>Posted On: {{Blog.blog_date}}</li>
+    <li class="list-group-item">
+        Blog: {{Blog.blog_title}}
+        <br>
+        Posted On: {{Blog.blog_date}}
+        
+        <div class="d-flex justify-content-between mb-1 mt-1">
+            <a href="/blog/{{Blog.id}}"><button type="button" class="btn btn-primary ">View Blog</button></a>
+            <a href="/blog/delete/{{Blog.id}}"><button type="button" class="btn btn-danger ">Delete</button></a>
+            
+        </div>
+    </li>
+    
     {% endfor %}
   </ol>
+
 </div>
 </div>
 
