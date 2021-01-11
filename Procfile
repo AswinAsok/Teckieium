@@ -1,1 +1,1 @@
-web: gunicorn Teckieium.wsgi --log-file -
+web:gunicorn Teckieium.wsgi --log-file -
