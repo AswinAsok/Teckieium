@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container d-flex justify-content-center mt-5">
+<div class="container d-flex justify-content-center mt-5 mb-5">
   
 <div class="card bg-primary  " style="width: 25rem">
   <div class="card-body text-white ">
-    <h5 class="card-title d-flex justify-content-center ">Name: {{User.username}}</h5>
+    <h5 class="card-title d-flex justify-content-center ">Name: {{Author}}</h5>
     <p class="card-text text-center">
       Bio: {{Bio.bio}}
     </p>
   </div>
-  <ol class="list-group list-group-flush">
+  <ol class="list-group list-group-flush ">
     {% for Blog in Blogs %}
     <li class="list-group-item">Blog: <a href="/blog/{{Blog.id}}">{{Blog.blog_title}}</a><br>Posted On: {{Blog.blog_date}}</li>
     {% endfor %}
