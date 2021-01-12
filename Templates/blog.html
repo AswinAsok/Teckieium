@@ -27,6 +27,7 @@
     <div class="card-header">Author: <a href="/blog/blogger/{{Blog.blog_author.id}}">{{Blog.blog_author}}</a></div>
     <div class="card-body">
       <h5 class="card-title"><ins>{{Blog.blog_title}}</ins></h5>
+      <p>{{ Blog.blog_content|truncatewords:50 }}</p>
       <a href="/blog/{{Blog.id}}" class="btn btn-primary">View Full Blog</a>
     </div>
     <div class="card-footer">{{Blog.blog_date}}</div>
