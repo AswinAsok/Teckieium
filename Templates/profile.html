@@ -5,9 +5,13 @@
 
   <div class="card-body text-white ">
     <h5 class="card-title d-flex justify-content-center ">Name: {{User.username}}</h5>
-    {%if Bio != None %}
+    {%if Bio%}
     <p class="card-text text-center">
-      {{Bio.bio}}
+     Bio: {{Bio.bio}}
+    </p>
+    {% else %}
+    <p class="card-text text-center">
+      Bio: {{Default_bio}}
     </p>
     {%endif%}
   </div>

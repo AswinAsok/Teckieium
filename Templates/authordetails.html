@@ -4,9 +4,15 @@
 <div class="card bg-primary  " style="width: 25rem">
   <div class="card-body text-white ">
     <h5 class="card-title d-flex justify-content-center ">Name: {{Author}}</h5>
+    {%if Bio%}
     <p class="card-text text-center">
-     {{Bio.bio}}
+     Bio: {{Bio.bio}}
     </p>
+    {% else %}
+    <p class="card-text text-center">
+      Bio: {{Default_bio}}
+    </p>
+    {%endif%}
   </div>
   <ol class="list-group list-group-flush ">
     {% for Blog in Blogs %}

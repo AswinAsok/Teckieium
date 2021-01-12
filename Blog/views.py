@@ -46,13 +46,16 @@ def authordetails(request, author_id):
     Author = User.objects.get(id=author_id)
     try:
         bio = Bio.objects.get(user = Author)
+        default_bio = None
     except Bio.DoesNotExist:
         bio = None
+        default_bio = "Bio Not Found 404"
         
     blogs = BlogPost.objects.filter(blog_author = Author)
     context = {}
     context['Author'] = Author
     context['Bio'] = bio
+    context['Default_bio'] = default_bio
     context['Blogs'] = blogs
     return render(request, "authordetails.html", context)
 
@@ -60,12 +63,15 @@ def profile(request):
     user = User.objects.get(id = request.user.id)
     try:
         bio = Bio.objects.get(user = user)
+        default_bio = None
     except Bio.DoesNotExist:
         bio = None
+        default_bio = "Bio Not Found 404"
     blogs = BlogPost.objects.filter(blog_author = user)
     context = {}
     context['User'] = user
     context['Bio'] = bio
+    context['Default_bio'] = default_bio
     context['Blogs'] = blogs
     return render(request, "profile.html", context)
 
