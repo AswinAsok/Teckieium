@@ -44,7 +44,11 @@ def blogdetails(request,blog_id):
 
 def authordetails(request, author_id):
     Author = User.objects.get(id=author_id)
-    bio = Bio.objects.get(user = Author)
+    try:
+        bio = Bio.objects.get(user = Author)
+    except Bio.DoesNotExist:
+        bio = None
+        
     blogs = BlogPost.objects.filter(blog_author = Author)
     context = {}
     context['Author'] = Author
@@ -54,7 +58,10 @@ def authordetails(request, author_id):
 
 def profile(request):
     user = User.objects.get(id = request.user.id)
-    bio = Bio.objects.get(user = user)
+    try:
+        bio = Bio.objects.get(user = user)
+    except Bio.DoesNotExist:
+        bio = None
     blogs = BlogPost.objects.filter(blog_author = user)
     context = {}
     context['User'] = user

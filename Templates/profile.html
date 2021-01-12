@@ -5,9 +5,11 @@
 
   <div class="card-body text-white ">
     <h5 class="card-title d-flex justify-content-center ">Name: {{User.username}}</h5>
+    {%if Bio != None %}
     <p class="card-text text-center">
-      Bio: {{Bio.bio}}
+      {{Bio.bio}}
     </p>
+    {%endif%}
   </div>
 
   <ol class="list-group list-group-flush">

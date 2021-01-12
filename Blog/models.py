@@ -30,7 +30,7 @@ class BlogPostComment(models.Model):
 
 class Bio(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE,blank=False,default="")
-    bio = models.TextField(max_length= 250, default="")
+    bio = models.TextField(max_length= 250, default="This User Has No Bio.")
 
 
 
