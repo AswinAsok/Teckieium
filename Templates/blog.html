@@ -3,7 +3,11 @@
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container d-flex justify-content-center">
+    {% if Count > 0  %}
     <h1 class="display-4">Latest Blogs</h1>
+    {% else %}
+    <h1 class="display-4">No blogs to display</h1>
+    {% endif %}
   </div>
   <div class="d-flex justify-content-center">
     {%if user.is_authenticated %}

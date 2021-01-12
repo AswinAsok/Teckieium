@@ -1,72 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Teckieium</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
   </head>
-  <!---------------------------Navbar Starts----------------------->
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-    <a class="navbar-brand ml-2" href="/blog"><h2>Teckieium</h2></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+    <a class="navbar-brand" href="/">Teckieium</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div
-      class="collapse navbar-collapse d-flex justify-content-end"
-      id="navbarNavDropdown"
-    >
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        {%if not user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="/accounts/login"
-            ><button class="btn-info btn btn-outline-light" type="submit">
-              Signin
-            </button></a
-          >
+          <a class="nav-link" href="/blog/bloggers">Bloggers</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/accounts/signup"
-            ><button class="btn-info btn btn-outline-light" type="submit">
-              Signup
-            </button></a
-          >
-        </li>
-        {% endif %} {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="/profile"
-            ><button class="btn-info btn btn-outline-light type="submit">
-              Profile
-            </button></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/accounts/logout"
-            ><button class="btn-info btn btn-outline-light" type="submit">
-              Logout
-            </button></a
-          >
-        </li>
-        {% endif %}
+      </div>
+        <div class="nav-item">
+
+          {% if not user.is_authenticated%}
+          <a href="/accounts/signup"><button type="button" class="btn btn-dark btn-outline-light">Sign Up</button></a>
+          <a href="/accounts/login"><button type="button" class="btn btn-dark btn-outline-light">Login</button></a>
+          {% endif %}
+
+          {% if user.is_authenticated %}
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{user.username}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item" href="/accounts/logout">Logout</a>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
       </ul>
-    </div>
+    
   </nav>
-  <!---------------------------Navbar End----------------------->
+
+
 
   <body>
-      {% block content %} {% endblock%}
+    {% block content%} {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

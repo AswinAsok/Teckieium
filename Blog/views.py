@@ -15,6 +15,7 @@ from.models import BlogPost, BlogPostComment
 
 def blog(request):
     Blogs = BlogPost.objects.all()
+    count = BlogPost.objects.all().count()
     p = Paginator(Blogs, 5)
 
     page_num = request.GET.get('page', 1)
@@ -26,6 +27,7 @@ def blog(request):
     
     context = {}
     context['Blogs'] = page
+    context['Count'] = count
     return render(request, 'blog.html', context)
 
 def blogdetails(request,blog_id):
