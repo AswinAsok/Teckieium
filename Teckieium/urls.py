@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from Blog.views import blog,signup,blogdetails,authordetails,bloggers,createcomment,bio,createblog,profile,deleteblog
+from Blog.views import blog,signup,blogdetails,authordetails,bloggers,createcomment,bio,createblog,profile,deleteblog,updateblog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('blog/create/', createblog, name='createblog'),
     path('blog/delete/<blog_id>', deleteblog, name='deleteblog'),
     path('blog/<blog_id>/create/', createcomment, name='createcomment'),
+    path('blog/<blog_id>/update/', updateblog, name='updateblog'),
     path('blog/<blog_id>/', blogdetails, name='blogdetails'),
     path('blog/blogger/<author_id>', authordetails, name='authordetails')
    
