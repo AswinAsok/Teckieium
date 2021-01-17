@@ -36,5 +36,6 @@ class Updateblog(ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = fields = ('blog_title' ,'blog_author' ,'blog_content')
+        fields = '__all__'
+    
         

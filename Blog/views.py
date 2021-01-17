@@ -101,11 +101,13 @@ def createcomment(request,blog_id):
 
 def updateblog(request, blog_id):
     Blog = BlogPost.objects.get(id=blog_id)
+    print("This is the blog id: ",blog_id)
     if request.method == 'POST':
-        form = Updateblog(request.POST)
+        form = Updateblog(request.POST, instance = Blog)
+        print(form.errors)
         if form.is_valid():
             form.save()
-            return request('blog')
+            return redirect('blog')
     else:
         form = Updateblog()
     
