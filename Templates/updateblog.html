@@ -13,7 +13,7 @@
         {% csrf_token %}
 
         {{ form|crispy }}
-        <small class="form-text text-muted">Note: Blog Publication date will be also be updated</small>
+        <small class="form-text text-muted">Note: Blog Publication date will not be updated</small>
         <button class="btn mt-3 btn-primary" type="submit">Submit</button>
         <a href="/blog/{{blog_id}}"
           ><button class="btn mt-3 btn-primary" type="button">
