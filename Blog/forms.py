@@ -32,10 +32,19 @@ class CreateBlog(ModelForm):
         super(CreateBlog, self).__init__(*args, **kwargs)
         self.fields['blog_author'].queryset = User.objects.filter(username=user)
 
-class Updateblog(ModelForm):
+class UpdateBlog(ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = '__all__'
+        fields = ('blog_title' ,'blog_author' ,'blog_content')
+
+    def __init__(self,Blog, *args, **kwargs):
+        super(UpdateBlog, self).__init__(*args, **kwargs)
+        self.fields['blog_title'].disabled = True
+        self.fields['blog_title'].initial = Blog.blog_title
+        self.fields['blog_author'].disabled = True
+        self.fields['blog_author'].initial = Blog.blog_author
+        self.fields['blog_content'].initial = Blog.blog_content
+        
     
         
